@@ -1,0 +1,35 @@
+body {
+    font-size: 16px;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        color: orange;
+    }
+
+    p {
+      font-weight: 600;
+    }
+
+    .ul {
+        line-height: 20px;
+        text-align: center;           
+    }
+
+    .highlighted-text{
+        text-decoration: red;
+        color: peru;
+    }
+
+    .Amarelo {
+      color: yellow;
+    }
+
+    .Vermelho {
+      color: red;
+    }
+
+    .Marrom {
+      color: brown;
+    }
