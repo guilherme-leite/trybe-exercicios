@@ -44,6 +44,7 @@ function createDaysOfTheMonth() {
   }
 }
 
+
 createDaysOfTheMonth();
 
 function createHolidayBtn(btnName) {
