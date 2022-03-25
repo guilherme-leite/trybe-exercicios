@@ -520,3 +520,7 @@ Main do exercicio 3
 Main do exercicio 3
 Parte 3 (opcional)
 Para finalizar, escolha alguns exercícios antigos como, por exemplo, o portfólio ou até mesmo os projetos de HTML , CSS e JavaScript e estruture as páginas utilizando Flexbox .
+
+https://www.flexboxgame.com/
+https://flexboxfroggy.com/
+http://www.flexboxdefense.com/
