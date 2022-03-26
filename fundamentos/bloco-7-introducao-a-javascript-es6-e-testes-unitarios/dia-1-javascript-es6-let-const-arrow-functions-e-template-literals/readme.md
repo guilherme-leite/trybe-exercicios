@@ -54,3 +54,7 @@ Função 2 : Escreva uma função que vai receber a string retornada da Função
 Exemplo: "Tryber x aqui! Minhas cinco principais habilidades são:
 JavaScript;
 HTML; ... #goTrybe".
+
+https://css-tricks.com/template-literals/
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
