@@ -58,3 +58,116 @@ const orderModifier = (order) => {
 }
 
 orderModifier(order);
+
+// Parte 3
+
+const lesson1 = {
+  materia: 'Matemática',
+  numeroEstudantes: 20,
+  professor: 'Maria Clara',
+  turno: 'manhã',
+};
+
+const lesson2 = {
+  materia: 'História',
+  numeroEstudantes: 20,
+  professor: 'Carlos',
+};
+
+const lesson3 = {
+  materia: 'Matemática',
+  numeroEstudantes: 10,
+  professor: 'Maria Clara',
+  turno: 'noite',
+};
+
+function addNewPeriod(obj, key, value) {
+  obj[key] = value;
+}
+
+addNewPeriod(lesson2, 'turno', 'noite');
+
+console.log(lesson2);
+
+function listKeys(obj) {
+  console.log(Object.keys(obj));
+}
+
+listKeys(lesson1);
+
+function showObjSize(obj) {
+  console.log(Object.entries(obj).length);
+}
+
+showObjSize(lesson2);
+
+function showObjValues(obj) {
+  console.log(Object.values(obj));
+}
+
+showObjValues(lesson3);
+
+const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
+
+console.table(allLessons);
+
+function allStudents(obj) {
+  const lessonsArr = Object.keys(obj);
+  let acc = 0;
+  for(let index in lessonsArr){
+    const numberOfStudents = obj[lessonsArr[index]].numeroEstudantes;
+    acc += numberOfStudents;
+  }
+  console.log(acc);
+}
+
+allStudents(allLessons);
+
+function getValueByNumber(lesson, num) {
+  console.log(Object.values(lesson)[num]);;
+}
+
+getValueByNumber(lesson1, 0);
+
+function verifyPair(obj, keyName, valueName) {
+  obj[keyName] === valueName ? console.log(true) : console.log(false);
+}
+
+verifyPair(lesson3, 'turno', 'noite');
+verifyPair(lesson3, 'materia', 'Maria Clara');
+
+//Bonus
+
+function totalMathStudents() {
+  let acc = 0;
+  for(let index in allLessons){
+    if(allLessons[index].materia === 'Matemática'){
+      acc += allLessons[index].numeroEstudantes
+    }
+  }
+  console.log(acc);
+}
+
+totalMathStudents();
+
+function createReport(obj, professor) {
+  let numeroEstudantes = 0;
+  const report = {
+    professor: '',
+    aulas: [],
+    estudantes: 0,
+  }
+
+  for(let index in allLessons){
+    if(allLessons[index].professor === professor){
+      report.professor = professor;
+      report.aulas.push(allLessons[index].materia);
+      report.estudantes += allLessons[index].numeroEstudantes; 
+    }
+  }
+  console.log(report);
+}
+
+createReport(allLessons, 'Maria Clara');
+
+// DONE AND DONE!
