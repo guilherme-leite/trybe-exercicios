@@ -14,7 +14,7 @@ docker pull debian:stable-slim
 
 Após baixar a imagem para seu computador local, crie e execute um container no modo interativo utilizando essa imagem como referência (não esqueça referenciar a tag ) ;
 
-docker container run debian:stable-slim echo 'foi'
+docker container run -it debian:stable-slim
 
 No terminal, você deve conseguir rodar o comando cat /etc/*-release , que vai retornar os dados da distribuição Debian que está sendo rodada dentro do container ;
 
@@ -24,17 +24,34 @@ Encerre o terminal ;
 
 Verifique na sua lista de containers , qual o container é referente ao exercício que acabou de praticar;
 
+docker container ls -l
+
 Inicie o mesmo container novamente , sem criar outro. Valide se ele está ativo na lista de containers;
+
+docker container start 123b15a37f6a
 
 Retome o container que foi criado anteriormente nesse exercício ;
 
+só funciona pois criamos ele com um terminal interativo anteriormente.
+
+docker container attach 123b15a37f6a
+
 Rode o comando cat /etc/debian_version que deve retornar a versão atual do sistema do container ;
+
+docker container run debian:stable-slim cat /etc/debian_version
 
 Encerre o terminal ;
 
 Remova somente o container criado para esse exercício ;
 
+docker container rm c19b18190d3b
+
 (Bônus) Crie e rode de modo interativo em modo 'Cleanup' , a imagem andrius/ascii-patrol ;
 
+docker container run -it --rm andrius/ascii-patrol
+
 (Bônus) Encerre o container utilizando os botões [ ctrl ] + [ c ].
+
+https://labs.play-with-docker.com/
+https://docs.docker.com/
 
