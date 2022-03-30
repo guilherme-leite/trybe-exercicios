@@ -95,16 +95,46 @@ function warriorAttack() {
 
 function mageAttack() {
   const {mana, intelligence} = mage;
-  const mageTurn = {
+  const mageRoll = {
     manaCost: 0,
     damageDealt: 'Não possui mana suficiente'
   }
   if(mana >= 15){
     const damage = (Math.floor(Math.random() * ((intelligence * 2) - intelligence) + intelligence));
-    mageTurn.manaCost = 15;
-    mageTurn.damageDealt = damage;
-    return mageTurn;
-  } return mageTurn;
+    mageRoll.manaCost = 15;
+    mageRoll.damageDealt = damage;
+    return mageRoll;
+  } return mageRoll;
 }
 
-console.log(warriorAttack(), mageAttack(), dragonAttack());
+const gameActions = {
+  warriorTurn: () => {
+    const warriorDamage = warriorAttack();
+    warrior.damage = warriorDamage;
+    dragon.healthPoints -= warriorDamage;
+  },
+
+  mageTurn: () => {
+    const mageEffects = mageAttack();
+    mage.damage = mageEffects.damageDealt;
+    dragon.healthPoints -= mageEffects.damageDealt;
+    mage.mana -= mageEffects.manaCost;
+  },
+  
+  dragonTurn: () => {
+    const dragonDamage = dragonAttack();
+    console.log('dragonDamage', dragonDamage);
+    dragon.damage = dragonDamage;
+    mage.healthPoints -= dragonDamage;
+    warrior.healthPoints -= dragonDamage;
+  },
+
+  battleMembers: () => {
+    console.table(battleMembers);
+  }
+}
+
+gameActions.warriorTurn();
+gameActions.mageTurn();
+gameActions.dragonTurn();
+gameActions.battleMembers();
