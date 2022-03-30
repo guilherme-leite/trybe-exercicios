@@ -81,8 +81,30 @@ const dragon = {
 
 const battleMembers = { mage, warrior, dragon };
 
-function dragonDamage({strength}) {
-  console.log(Math.floor(Math.random() * (strength - 14)+ 15));
+function dragonAttack() {
+  const {strength} = dragon;
+  const dragonDamage = Math.floor(Math.random() * (strength - 14)+ 15);
+  return dragonDamage;
 }
 
-dragonDamage(dragon);
+function warriorAttack() {
+  const {strength, weaponDmg} = warrior;
+  const warriorDamage = (Math.floor(Math.random() * (strength -14) + 15)*weaponDmg);
+  return warriorDamage;
+}
+
+function mageAttack() {
+  const {mana, intelligence} = mage;
+  const mageTurn = {
+    manaCost: 0,
+    damageDealt: 'Não possui mana suficiente'
+  }
+  if(mana >= 15){
+    const damage = (Math.floor(Math.random() * ((intelligence * 2) - intelligence) + intelligence));
+    mageTurn.manaCost = 15;
+    mageTurn.damageDealt = damage;
+    return mageTurn;
+  } return mageTurn;
+}
+
+console.log(warriorAttack(), mageAttack(), dragonAttack());
