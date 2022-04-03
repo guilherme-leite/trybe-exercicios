@@ -272,3 +272,23 @@ const getPosition = (latitude, longitude) => ({
 });
 
 console.log(getPosition(-19.8157, -43.9542));
+
+//
+
+const greeting = (user = 'Usuário') => console.log(`Welcome ${user}`);
+
+greeting('gui');
+greeting();
+
+//
+
+const multiply = (number, value = 1) => {
+  console.log(number * value);
+};
+
+multiply(8);
+multiply(8,3);
+
+//
+
+
