@@ -71,3 +71,22 @@ console.table(fruitSalad(specialFruit, additionalItems));
 
 //
 
+function quantosParams(...args) {
+  console.log(`Você passou ${args.length} parâmetros para a funcão`,args);
+}
+
+quantosParams(0,1,2,3);
+quantosParams(true, [1,2,3,"i"], 33);
+quantosParams(true, ...[1,2,3,"i"], 33);
+
+//
+
+const sum = (...args) => args.reduce((acc, curr) => acc + curr);
+
+console.log(sum(1,2,3,4,5,6,7));
+console.log(sum('casa', ' da ', 'mãe'));
+
+//
+
+
+
