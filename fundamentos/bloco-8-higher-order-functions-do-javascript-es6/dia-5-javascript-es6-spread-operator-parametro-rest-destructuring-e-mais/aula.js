@@ -223,3 +223,52 @@ console.log('array numeros pares', numerosPares); // [6, 8, 10, 12];
 [,,,...numerosPares] = numerosPares;
 
 console.log('array numeros pares:',numerosPares);
+
+const person = {
+  name: 'João',
+  lastName: 'Jr',
+  age: 34,
+};
+
+// const { nationality } = person;
+// console.log(nationality);
+// UNDEFINED
+
+const { nationality = 'Brazilian' } = person;
+console.log(nationality);
+
+//
+
+const position2d = [1.0, 2.0];
+const [x, y, z = 0] = position2d;
+
+console.log(x); // 1
+console.log(y); // 2
+console.log(z); // 0
+
+//
+
+const getNationality = ({ firstName, nationalityy = "Brazil" }) => `${firstName} is ${nationalityy}`;
+
+const personn = {
+  firstName: 'João',
+  lastName: 'Jr II',
+};
+
+const otherPerson = {
+  firstName: 'Ivan',
+  lastName: 'Ivanovich',
+  nationalityy: 'Russian',
+};
+
+console.log(getNationality(otherPerson)); // Ivan is Russian
+console.log(getNationality(personn));
+
+//
+
+const getPosition = (latitude, longitude) => ({
+  latitude,
+  longitude
+});
+
+console.log(getPosition(-19.8157, -43.9542));
