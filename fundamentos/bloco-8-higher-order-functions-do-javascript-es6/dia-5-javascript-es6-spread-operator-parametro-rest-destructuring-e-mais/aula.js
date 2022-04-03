@@ -88,5 +88,107 @@ console.log(sum('casa', ' da ', 'mãe'));
 
 //
 
+const product = {
+  name: 'Smart TV Crystal UHD',
+  price: '1899.05',
+  seller: 'Casas de Minas',
+};
+
+const {name, price, seller} = product;
+
+console.log(name);
+console.log(price);
+console.log(seller);
+
+//
+
+const character = {
+  namee: 'Luke SkyWalker',
+  age: '53',
+  description: {
+    specieName: 'Human',
+    jedi: true,
+  },
+  homeWorld: {
+    planetName: 'Tatooine',
+    population: '200000',
+  },
+};
+
+const destructuredValues = {namee, age, description : {specieName, jedi}, homeWorld: {planetName, population}} = character;
+
+console.log(`Esse é o ${namee}, ele tem ${age} anos, mora no planeta ${planetName} e, por incrível que possa parecer, ele ${jedi ? 'é um Jedi' : 'não é um Jedi'}.`);
+
+//
+
+const daysOfWeek = {
+  workDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  weekend: ['Saturday', 'Sunday'],
+};
+
+const {workDays, weekend} = daysOfWeek;
+console.log(workDays, weekend);
+
+const weekdays = [...workDays, ...weekend];
+console.log(weekdays);
+
+//
+
+const student = {
+  a: 'Maria',
+  b: 'Turma B',
+  c: 'Matematica',
+};
+
+const { a: nome , b: turma , c: materia } = student;
+// mesma coisa que => const name = student.a;
+
+console.log(nome);
+console.log(turma);
+console.log(materia);
+
+//
+
+const product2 = {
+  productName: 'Smart TV Crystal UHD',
+  productPrice: '1899.05',
+  productSeller: 'Casas de Minas',
+};
+
+const printProductDetails = ({productName, productPrice, productSeller}) => {
+  console.log(`Comprei uma ${productName} por ${productPrice} reais na ${productSeller}`);
+};
+printProductDetails(product2);
+
+//
+
+
+const user = {
+  userName: 'Maria',
+  age: 21,
+  nationality: 'Brazilian',
+};
+
+const jobInfos = {
+  profession: 'Software engineer',
+  squad: 'Rocket Landing Logic',
+  squadInitials: 'RLL',
+};
+
+const fullInfo = {
+  ...user,
+  ...jobInfos,
+};
+
+console.table(fullInfo);
+
+const onboardingPresentation = ({userName, age, nationality, profession, squad, squadInitials }) => {
+  console.log(`Hi, my name is ${userName}, I'm ${age} years old and I'm ${nationality}. I work as a ${profession} and my squad is ${squadInitials}-${squad}`);
+};
+
+onboardingPresentation(fullInfo);
+
+//
+
 
 
