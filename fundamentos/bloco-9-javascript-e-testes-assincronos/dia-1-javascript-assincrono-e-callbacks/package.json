@@ -4,7 +4,7 @@
   "description": "",
   "main": "aula.js",
   "scripts": {
-    "test": "Jest"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
