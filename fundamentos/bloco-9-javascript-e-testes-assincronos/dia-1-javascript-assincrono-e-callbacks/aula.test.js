@@ -27,3 +27,15 @@ test('Testando asyncSum, soma 5 mais 10', (done) => {
     }
   });
 });
+
+// cicles.test.js
+
+// let cities = [];
+
+// const addCity = (city) => {
+//  cities.push(city);
+// };
+
+// const removeCity = (city) => {
+//  cities = cities.filter((eachCity) => eachCity !== city);
+// };
