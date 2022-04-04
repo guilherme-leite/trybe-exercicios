@@ -60,9 +60,9 @@ const jupiter = {
   },
 };
 
-console.log(planetDistanceFromSun(mars)); // A
-setTimeout(() => console.log(planetDistanceFromSun(venus)), 3000); // B
-setTimeout(() => console.log(planetDistanceFromSun(jupiter)), 2000); // C
+// console.log(planetDistanceFromSun(mars)); // A
+// setTimeout(() => console.log(planetDistanceFromSun(venus)), 3000); // B
+// setTimeout(() => console.log(planetDistanceFromSun(jupiter)), 2000); // C
 
 // A,C,B
 
@@ -77,7 +77,7 @@ const getPlanet = () => {
   setTimeout(() => console.log("Returned planet: ", mars), 4000);
 };
 
-getPlanet(); // imprime Marte depois de 4 segundos;
+// getPlanet(); // imprime Marte depois de 4 segundos;
 
 //
 
@@ -156,11 +156,58 @@ const sendMarsTemperature = (callback, errorCallback) => {
       }, messageDelay());
     };
 
-// imprime "It is currently 47ºF at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
-sendMarsTemperature(temperatureInFahrenheit, handleError);
+// // imprime "It is currently 47ºF at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
+// sendMarsTemperature(temperatureInFahrenheit, handleError);
 
-// imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
-sendMarsTemperature(greet, handleError);
+// // imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
+// sendMarsTemperature(greet, handleError);
 
 //
 
+const pokemons = [
+  {
+    name: 'Bulbasaur',
+    type: 'Grass',
+    ability: 'Razor Leaf',
+  },
+  {
+    name: 'Charmander',
+    type: 'Fire',
+    ability: 'Ember',
+  },
+  {
+    name: 'Squirtle',
+    type: 'Water',
+    ability: 'Water Gun',
+  },
+];
+
+function getPokemonDetails(filter, callback) {
+  setTimeout(() => {
+    if (pokemons.find(filter) === undefined) {
+      return callback(new Error('Não temos esse pokémon para você :('), null);
+    }
+    const pokemon = pokemons.find(filter);
+
+    const { name, type, ability } = pokemon;
+
+    const messageFromProfOak = `Olá, seu pokémon é o ${name}, o tipo dele é ${type} e a habilidade principal dele é ${ability}`;
+
+    callback(null, messageFromProfOak);
+  }, 2000);
+}
+
+getPokemonDetails(
+  (pokemon) => pokemon.name === 'Bulbasaur',
+  (error, message) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(message);
+    }
+  }
+);
+
+module.exports = {
+  getPokemonDetails,
+};
