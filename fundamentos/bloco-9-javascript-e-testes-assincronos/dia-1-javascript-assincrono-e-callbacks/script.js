@@ -234,3 +234,4 @@ describe('Scoped / Nested block', () => {
 module.exports = {
   getPokemonDetails,
 };
+
