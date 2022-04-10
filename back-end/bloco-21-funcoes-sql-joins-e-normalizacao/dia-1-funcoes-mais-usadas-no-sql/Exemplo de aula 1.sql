@@ -6,3 +6,8 @@ SELECT RIGHT('Oi meu nome é Gui', 5);
 SELECT CHAR_LENGTH('Oi meu nome é Gui');
 SELECT SUBSTRING('Oi meu nome é Gui',5,5);
 SELECT SUBSTRING('Oi meu nome é Gui',5);
+SELECT UCASE('trybe');
+SELECT REPLACE('Você já ouviu falar do DuckDuckGo?','DuckDuckGo', 'Google');
+SELECT CHAR_LENGTH('Quantos caracteres tem nessa frase?');
+SELECT SUBSTRING('A linguagem JavaScript está entre as mais usadas',13,10);
+SELECT LCASE('RUA NORTE 1500, SÃO PAULO, BRASIL');
