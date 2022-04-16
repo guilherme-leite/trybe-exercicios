@@ -4,6 +4,7 @@ const scrips = [
   { name: 'Calcular IMC', script: './imc.js' },
   { name: 'Calcular velocidade média', script: './velocidade.js' },
   { name: 'Jogo de adivinhação', script: './sorteio.js' },
+  { name: 'Calcular fatorial', script: './fatorial.js'}
 ];
 
 function chooseScript() {
@@ -16,17 +17,9 @@ function chooseScript() {
   console.log(mensagem);
 
   const scrip = question('Qual script deseja rodar? ');
-
-  if(script = 1) {
-    require('./imc.js');
-  } else if (scrip = 2) {
-    require('./velocidade.js');
-  } else if (scrip = 3) {
-    require('./sorteio.js');
-  } else {
-    console.log('Essa opcão não existe, tente novamente.');
-    chooseScript();
-  }
+  let chosen = scrips[scrip-1];
+  console.log(chosen);
+  require(chosen.script);
 }
 
 chooseScript();
