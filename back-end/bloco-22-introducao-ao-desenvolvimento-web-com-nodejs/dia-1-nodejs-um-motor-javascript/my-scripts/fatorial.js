@@ -3,9 +3,9 @@ const readline = require('readline-sync');
 const number = readline.question('Qual número deseja fatorar? ');
 
 function calcFactorial() {
-  let total = 0;
-  for(let i = 2; i > number; i ++) {
-    return total = number * i
+  let total = 1;
+  for(let i = 1; i <= number; i ++) {
+   total = total * i;
   }
   console.log(total);
 }
