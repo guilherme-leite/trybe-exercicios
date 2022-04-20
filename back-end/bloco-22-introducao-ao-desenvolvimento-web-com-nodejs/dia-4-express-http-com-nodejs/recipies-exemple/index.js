@@ -15,11 +15,16 @@ const drinks = [
   { id: 5, name: 'Cerveja Lata', price: 4.5 },
   { id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
+app.get('/recipes/search', function (req, res) {
+  const { name, maxPrice } = req.query;
+  const filteredRecipes = recipes.filter((rec) => rec.name.includes(name) && rec.price < parseInt(maxPrice));
+
+  res.status(200).json(filteredRecipes);
+});
 
 app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
-
 
 app.get('/recipes/:id', function (req, res) {
   const {id} = req.params
