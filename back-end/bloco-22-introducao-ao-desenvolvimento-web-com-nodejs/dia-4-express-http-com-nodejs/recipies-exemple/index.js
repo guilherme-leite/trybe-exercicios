@@ -64,7 +64,14 @@ app.get('/drinks/:id', function (req, res) {
   if(!drink) return res.status(404).json({ message: 'Drink not found!'});
 
   res.status(200).json(drink);
-})
+});
+
+app.get('/validateToken', function (req, res){
+  const token = req.headers.authorization;
+  if(token.length !== 16) return res.status(401).json({message: 'Invalid token'});
+
+  res.status(200).json({message: 'Valid Token!'});
+});
 
 app.listen(3001, () => {
   console.log('Aplicacão ouvindo na porta 3001');
