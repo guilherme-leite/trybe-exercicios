@@ -34,7 +34,13 @@ app.post('/recipes', function (req, res) {
   const { id, name, price } = req.body;
   recipes.push({ id, name, price });
   res.status(201).json({ message: 'Recipe created successfully!'});
-})
+});
+
+app.post('/drinks', function (req, res) {
+  const { id, name, price } = req.body;
+  drinks.push({id, name, price});
+  res.status(201).json({ message: 'Drink created successfully!'}); 
+});
 
 app.get('/recipes/:id', function (req, res) {
   const {id} = req.params
