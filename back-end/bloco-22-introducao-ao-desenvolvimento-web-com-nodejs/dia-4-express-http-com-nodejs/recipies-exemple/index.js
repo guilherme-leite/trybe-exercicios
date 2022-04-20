@@ -30,6 +30,12 @@ app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
 
+app.post('/recipes', function (req, res) {
+  const { id, name, price } = req.body;
+  recipes.push({ id, name, price });
+  res.status(201).json({ message: 'Recipe created successfully!'});
+})
+
 app.get('/recipes/:id', function (req, res) {
   const {id} = req.params
   const recipe = recipes.find((rec) => rec.id === parseInt(id));
