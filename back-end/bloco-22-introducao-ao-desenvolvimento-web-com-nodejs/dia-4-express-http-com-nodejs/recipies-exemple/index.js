@@ -58,7 +58,6 @@ app.get('/drinks/searlistench', function (req, res) {
   res.status(200).json(filteredDrinks);
 });
 
-listen
 app.get('/drinks/:id', function (req, res) {
   const {id} = req.params
   const drink = drinks.find((dri) => dri.id === parseInt(id));
