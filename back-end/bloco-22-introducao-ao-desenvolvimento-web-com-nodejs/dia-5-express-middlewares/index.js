@@ -6,7 +6,9 @@ const pwMaxLenght = 8;
 const app = express();
 app.use(express.json());
 
-app.post('/use/register', function (req, res) {
+
+
+app.post('/user/register', function (req, res) {
   const { username, email, password } = req.body;
   const isValid = email.includes("@") && email.includes(".com");
   const isPwValid = password.length >= pwMinLenght && password.length <= pwMaxLenght;
@@ -18,6 +20,12 @@ app.post('/use/register', function (req, res) {
   return res.status(201).json({ message: "user created" });
 
 });
+
+app.post('/user/login', function (req, res) {
+  const { email, password } = req.body;
+  
+
+})
 
 app.listen(3002, () => {
   console.log('Rodante na porta 3002');
