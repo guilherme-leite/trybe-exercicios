@@ -91,7 +91,7 @@ app.put('/recipes/:id', function (req, res) {
 });
 
 app.put('/drinks/:id', function (req, res) {
-  const { id } = req.parms;
+  const { id } = req.params;
   const { name, price } = req.body;
   const drinkIndex = drinks.findIndex((dri) => dri.id === parseInt(id));
 
