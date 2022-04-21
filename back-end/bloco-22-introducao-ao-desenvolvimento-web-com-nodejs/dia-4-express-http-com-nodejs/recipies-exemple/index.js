@@ -51,7 +51,7 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
-app.get('/drinks/searlistench', function (req, res) {
+app.get('/drinks/search', function (req, res) {
   const { name, maxPrice } = req.query;
   const filteredDrinks = drinks.filter((drink) => drink.name.includes(name) && drink.price < parseInt(maxPrice));
 
