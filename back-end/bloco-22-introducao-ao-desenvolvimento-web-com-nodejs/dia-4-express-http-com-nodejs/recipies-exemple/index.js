@@ -30,6 +30,10 @@ app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
 
+app.get('/drinks', function (req, res) {
+  res.json(drinks);
+});
+
 app.post('/recipes', function (req, res) {
   const { id, name, price, waitTime } = req.body;
   recipes.push({ id, name, price, waitTime });
