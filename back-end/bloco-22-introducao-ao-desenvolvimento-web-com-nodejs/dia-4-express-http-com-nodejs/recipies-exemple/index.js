@@ -95,7 +95,7 @@ app.put('/drinks/:id', function (req, res) {
   const { name, price } = req.body;
   const drinkIndex = drinks.findIndex((dri) => dri.id === parseInt(id));
 
-  if(recipeIndex === -1) return res.status(404).json({ message: 'Drink not found!' });
+  if(drinkIndex === -1) return res.status(404).json({ message: 'Drink not found!' });
 
   drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
 
@@ -122,6 +122,10 @@ app.delete('/drinks/:id', function (req, res) {
   drinks.splice(drinkIndex, 1);
 
   res.status(204).end();
+});
+
+app.all('*', function (req, res){
+  return res.status(404).json({ message: `A rota ${req.path} não existe.`});
 });
 
 app.listen(3001, () => {
