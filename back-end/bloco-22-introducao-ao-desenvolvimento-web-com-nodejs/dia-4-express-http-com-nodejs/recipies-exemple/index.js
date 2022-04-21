@@ -110,7 +110,16 @@ app.delete('/recipes/:id', function (req, res) {
   res.status(204).end();
 });
 
+app.delete('/drinks/:id', function (req, res) {
+  const { id } = req.params;
+  const drinkIndex = drinks.findIndex((dri) => dri.id === parseInt(id));
 
+  if (drinkIndex === -1) return dri.status(404).json({ message: 'Drink not found!'});
+
+  drinks.splice(drinkIndex, 1);
+
+  res.status(204).end();
+});
 
 app.listen(3001, () => {
   console.log('Aplicacão ouvindo na porta 3001');
