@@ -1,5 +1,3 @@
-const fs = require('fs').promises;
-
 function calculateThisNums(a, b ,c) {
   return new Promise((resolve, reject) => {
     if ( typeof a !== 'number' || typeof b !== 'number' || typeof c !== 'number' ) reject(new Error('Informe apenas números'));
@@ -9,6 +7,16 @@ function calculateThisNums(a, b ,c) {
   })
 }
 
-calculateThisNums(1,2,3)
-  .then(result => console.log(`sucesso: ${result}`))
-  .catch(err => console.error(`erro: ${err.message}`));
+function getRandomNums() {
+  return Math.floor(Math.random() * 10 + 1);
+}
+
+function params() {
+  const randomNums = Array.from({ length: 3}).map(getRandomNums);
+  
+  calculateThisNums(...randomNums)
+    .then(result => console.log(`sucesso: ${result}`))
+    .catch(err => console.error(`erro: ${err.message}`));
+}
+
+params();
