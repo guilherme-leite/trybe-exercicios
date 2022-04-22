@@ -2,7 +2,7 @@ const { stringify } = require('querystring');
 
 const fs = require('fs').promises;
 
-async function simpsonsFamily(...args) {
+async function removeFromSimpsonsArrayById(...args) {
   const remove = JSON.stringify(args);
 
   const simpsons = await fs.readFile('simpsons.json', 'utf8')
@@ -15,4 +15,4 @@ async function simpsonsFamily(...args) {
   console.log(newSimpsonsArr);
 }
 
-simpsonsFamily(6, 10);
+removeFromSimpsonsArrayById(6, 10);
