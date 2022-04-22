@@ -1,12 +1,18 @@
+const { stringify } = require('querystring');
+
 const fs = require('fs').promises;
 
-async function simpsonsFamily() {
+async function simpsonsFamily(...args) {
+  const remove = JSON.stringify(args);
+
   const simpsons = await fs.readFile('simpsons.json', 'utf8')
   .then((data) => {
     return JSON.parse(data);
   });
 
-  const newSimpsonsArr = simpsons.filter(simpson => ['1', '2', '3', '4'].includes(simpson.id));
+  console.log(simpsons);
+
+  const newSimpsonsArr = simpsons.filter(simpson => !remove.includes(simpson.id));
 
   await fs.writeFile('simpsonsFamily.json', JSON.stringify(newSimpsonsArr));
 
@@ -18,4 +24,4 @@ async function simpsonsFamily() {
   console.log(simpsonsFamily);
 }
 
-simpsonsFamily();
+simpsonsFamily(6, 10);
