@@ -10,18 +10,9 @@ async function simpsonsFamily(...args) {
     return JSON.parse(data);
   });
 
-  console.log(simpsons);
-
   const newSimpsonsArr = simpsons.filter(simpson => !remove.includes(simpson.id));
 
-  await fs.writeFile('simpsonsFamily.json', JSON.stringify(newSimpsonsArr));
-
-  const simpsonsFamily = await fs.readFile('simpsonsFamily.json', 'utf8')
-  .then((data) => {
-    return JSON.parse(data);
-  });
-
-  console.log(simpsonsFamily);
+  console.log(newSimpsonsArr);
 }
 
 simpsonsFamily(6, 10);
