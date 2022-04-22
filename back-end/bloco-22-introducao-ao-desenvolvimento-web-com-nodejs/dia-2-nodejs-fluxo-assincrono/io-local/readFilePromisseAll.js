@@ -12,3 +12,5 @@ Promise.all([
   .catch((err) => {
     console.error(`Erro ao ler arquivos: ${err.message}`);
   });
+
+  
