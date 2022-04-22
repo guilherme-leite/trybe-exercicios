@@ -15,11 +15,19 @@ fs.readFile('simpsons.json', 'utf8')
     process.exit(1);
   });
 
-// fs.readFile(nomeDoArquivo, 'utf8')
-//   .then((data) => {
-//     console.log(`Conteúdo do arquivo: ${data}`);
-//   })
-//   .catch((err) => {
-//     console.error(`Não foi possível ler o arquivo ${nomeDoArquivo}\n Erro: ${err}`);
-//     process.exit(1); // Encerra a execução do script e informa ao sistema operacional que houve um erro com código
-//   });
+  async function getSimpsonById(id) {
+    const simpsons = await fs.readFile('simpsons.json', 'utf8')
+      .then((data) => {
+        return JSON.parse(data);
+      });
+
+      const chosenSimpson = simpsons.find((simpson) => simpson.id === id);
+
+      if(!chosenSimpson) {
+        throw new Error('Id inexistente');
+      }
+
+      console.log(chosenSimpson);
+  }
+
+  getSimpsonById('2');
