@@ -11,12 +11,28 @@ function getRandomNums() {
   return Math.floor(Math.random() * 10 + 1);
 }
 
-function params() {
+// Refatorada para utilizar async/await
+
+async function params() {
   const randomNums = Array.from({ length: 3}).map(getRandomNums);
   
-  calculateThisNums(...randomNums)
-    .then(result => console.log(`sucesso: ${result}`))
-    .catch(err => console.error(`erro: ${err.message}`));
+  try {
+    const result = await calculateThisNums(...randomNums);
+  console.log(result);
+  } catch (err) {
+    console.log(err.message);
+  }
+
 }
+
+// Utilizando Promisses 
+
+// function params() {
+//   const randomNums = Array.from({ length: 3}).map(getRandomNums);
+  
+//   calculateThisNums(...randomNums)
+//     .then(result => console.log(`sucesso: ${result}`))
+//     .catch(err => console.error(`erro: ${err.message}`));
+// }
 
 params();
