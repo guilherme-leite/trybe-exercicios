@@ -27,9 +27,18 @@ async function start() {
   if(!originalContent) return;
 
 const oldWord = await question('Qual palavra deseja substituir? ');
+
+if(!originalContent.includes(oldWord)) {
+  console.log('Essa palavra não existe no corpo do texto');
+  console.log('exiting');
+  return;
+}
+
 const newWord = await question('E qual palavra deve ficar em seu lugar? ');
 
+
 const newContent = originalContent.replace(new RegExp(oldWord, 'g'), newWord);
+
 
 if(newContent ===  originalContent) {
   console.log('Não foi feita nenhuma mudanca!');
