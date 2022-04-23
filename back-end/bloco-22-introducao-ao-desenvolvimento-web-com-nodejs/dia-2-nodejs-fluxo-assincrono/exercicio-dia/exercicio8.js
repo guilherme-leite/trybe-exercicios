@@ -13,6 +13,10 @@ async function readFile() {
     }
     console.log(data);
   });
+  if(!actualFile) {
+    console.log('Arquivo inexistente');
+    return
+  }
   console.log(actualFile);
 }
 
