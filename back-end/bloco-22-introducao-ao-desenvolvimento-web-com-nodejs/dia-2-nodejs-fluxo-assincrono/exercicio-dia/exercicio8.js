@@ -1,5 +1,5 @@
-const readline = require('readline');
 const fs = require('fs').promises;
+const readline = require('readline');
 
 
 function question(message) {
@@ -21,7 +21,7 @@ async function start() {
   const fileName = await question('Digite o caminho do arquivo que deseja ler: ');
 
   try {
-    const fileContent = await readFile(fileName, 'utf8');
+    const fileContent = await fs.readFile(fileName, 'utf8');
     console.log(fileContent);
   } catch (err) {
     console.log('Arquivo inexistente!');
