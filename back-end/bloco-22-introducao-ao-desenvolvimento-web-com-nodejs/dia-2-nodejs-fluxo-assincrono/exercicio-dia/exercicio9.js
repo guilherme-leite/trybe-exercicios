@@ -31,6 +31,12 @@ const newWord = await question('E qual palavra deve ficar em seu lugar? ');
 
 const newContent = originalContent.replace(new RegExp(oldWord, 'g'), newWord);
 
+if(newContent ===  originalContent) {
+  console.log('Não foi feita nenhuma mudanca!');
+  console.log('exiting');
+  return;
+}
+
 console.log('Resultado da substituicão: ');
 console.log(newContent);
 
