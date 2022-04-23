@@ -1,23 +1,31 @@
-const { question } = require('readline-sync');
+const readline = require('readline');
 const fs = require('fs').promises;
 
 
-async function readFile() {
+function question(message) {
 
-  const chosenFile = question('Qual script deseja rodar? ');
-  
-  const actualFile = await fs.readFile(chosenFile, 'utf8', (err, data) => {
-    if (err) {
-      console.log(err);
-      return
-    }
-    console.log(data);
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
   });
-  if(!actualFile) {
-    console.log('Arquivo inexistente');
-    return
-  }
-  console.log(actualFile);
+
+  return new Promise((resolve) => {
+    rl.question(message, (answer) => {
+      rl.close();
+      resolve(answer);
+    });
+  });
 }
 
-readFile();
+async function start() {
+  const fileName = await question('Digite o caminho do arquivo que deseja ler: ');
+
+  try {
+    const fileContent = await readFile(fileName, 'utf8');
+    console.log(fileContent);
+  } catch (err) {
+    console.log('Arquivo inexistente!');
+  }
+}
+
+start();
