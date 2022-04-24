@@ -4,6 +4,7 @@ const authMiddleware = require('./authMiddleware');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(authMiddleware);
 
 app.get('/ping', function (req, res) {
   res.status(200).json({ message: 'pong'});
@@ -20,6 +21,15 @@ app.post('/greetings', (req, res) => {
     return res.status(200).json({ message: `Hello, ${name}!`});
   } else return res.status(401).json({ message: 'Unauthorized'});
 });
+
+app.post('/singup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+  
+  if([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: 'Missing Fields' });
+  }
+
+})
 
 app.put('/users/:name/:age', (req, res) => {
   const { name, age } = req.params;
