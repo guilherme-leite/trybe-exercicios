@@ -3,7 +3,7 @@ try {
   const { authorization } = req.headers;
 
   if(!authorization || authorization.lenght !== 16) {
-    return res.status(401).json({ message: 'Token inválido' });
+    return res.status(401).json({ message: `token invalido ${authorization}` });
   }
 
     return next();

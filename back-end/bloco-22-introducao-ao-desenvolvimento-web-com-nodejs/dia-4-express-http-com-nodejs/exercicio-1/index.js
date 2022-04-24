@@ -1,11 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const authMiddleware = require('./authMiddleware');
-const crypto = require('crypto');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(authMiddleware);
 
 app.get('/ping', function (req, res) {
   res.status(200).json({ message: 'pong'});
@@ -24,15 +21,17 @@ app.post('/greetings', (req, res) => {
 });
 
 app.post('/singup', (req, res) => {
-  const { email, password, firstName, phone } = req.body;
+  try {
+    const { email, password, firstName, phone } = req.body;
 
-  if([email, password, firstName, phone].includes(undefined)) {
-    return res.status(401).json({ message: 'Missing Fields' });
+    if([email, password, firstName, phone].includes(undefined)) {
+      return res.status(401).json({ message: 'Missing Fields' });
+    }
+
+    return res.status(200).json({ message: 'Weeeeeeeeeeeeee' });
+  } catch(error) {
+    return res.status(500).end();
   }
-
-  const token = crypto.randomBytes(8).toString('hex');
-
-  res.status(200).json({ token });
 })
 
 app.put('/users/:name/:age', (req, res) => {
