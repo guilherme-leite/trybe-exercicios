@@ -5,15 +5,18 @@
 // Caso contrário, rejeite a Promise com o valor do número.
 
 function fizzBuzz(num) {
-  new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if (num % 3 === 0 && num % 5 === 0) {
-      resolve(console.log('FizzBuzz'));
+      resolve('FizzBuzz');
     } else if (num % 3 === 0) {
-      resolve(console.log('Fizz'));
+      resolve('Fizz');
     } else if (num % 5 === 0) {
-      resolve(console.log('Buzz'));
-    } reject(console.log('O número escolhido não é divisível por 3 nem 5: ', num));
+      resolve('Buzz');
+    } reject(num);
   });
 }
 
-fizzBuzz(4);
+fizzBuzz(1).catch(console.error); 
+fizzBuzz(3).then(console.log); 
+fizzBuzz(5).then(console.log); 
+fizzBuzz(15).then(console.log);
