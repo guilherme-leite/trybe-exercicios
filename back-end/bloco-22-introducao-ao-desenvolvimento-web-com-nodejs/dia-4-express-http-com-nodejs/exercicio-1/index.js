@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const crypto = require('crypto');
 
 const app = express();
 app.use(bodyParser.json());
@@ -28,7 +29,9 @@ app.post('/singup', (req, res) => {
       return res.status(401).json({ message: 'Missing Fields' });
     }
 
-    return res.status(200).json({ message: 'Weeeeeeeeeeeeee' });
+    const token = crypto.randomBytes(8).toString('hex');
+
+    return res.status(200).json({ token });
   } catch(error) {
     return res.status(500).end();
   }
