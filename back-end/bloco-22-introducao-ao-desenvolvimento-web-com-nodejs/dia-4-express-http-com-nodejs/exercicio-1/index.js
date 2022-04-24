@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const authMiddleware = require('./authMiddleware');
+const crypto = requite('crypto');
 
 const app = express();
 app.use(bodyParser.json());
@@ -24,11 +25,14 @@ app.post('/greetings', (req, res) => {
 
 app.post('/singup', (req, res) => {
   const { email, password, firstName, phone } = req.body;
-  
+
   if([email, password, firstName, phone].includes(undefined)) {
     return res.status(401).json({ message: 'Missing Fields' });
   }
 
+  const token = crypto.randomBytes(8).toString('hex');
+
+  res.status(200).json({ token });
 })
 
 app.put('/users/:name/:age', (req, res) => {
