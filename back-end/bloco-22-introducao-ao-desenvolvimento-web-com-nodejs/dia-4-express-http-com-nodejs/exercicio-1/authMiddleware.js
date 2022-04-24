@@ -1,13 +1,12 @@
 module.exports = (req, res, next) => {
-try {
-  const { authorization } = req.headers;
+  try {
+    const { token } = req.headers;
 
-  if(!authorization || authorization.lenght !== 16) {
-    return res.status(401).json({ message: `token invalido ${authorization}` });
-  }
-
+    if(!token || token.length !== 16){
+      return res.status(401).json({ message: 'Token inválido!' });
+    }
     return next();
-  } catch (err) {
+  } catch (error) {
     return res.status(500).end();
   }
 }

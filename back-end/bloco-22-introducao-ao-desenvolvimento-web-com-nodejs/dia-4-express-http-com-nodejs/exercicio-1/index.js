@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
+const authMiddleware = require('./authMiddleware');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(authMiddleware);
 
 app.get('/ping', function (req, res) {
   res.status(200).json({ message: 'pong'});
