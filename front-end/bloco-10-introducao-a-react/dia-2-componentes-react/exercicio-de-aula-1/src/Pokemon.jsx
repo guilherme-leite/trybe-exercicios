@@ -6,7 +6,7 @@ class Pokemon extends React.Component {
     const { pokemon: { name, type, averageWeight, image } } = this.props;
 
     return (
-      <div className='card'>
+      <div className='pokemon'>
         <p>{name}</p>
         <p>{type}</p>
         <p>{`Average weight: ${averageWeight.value}${averageWeight.measurementUnit}`}</p>
