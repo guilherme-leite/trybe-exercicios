@@ -5,10 +5,7 @@ class Pokemon extends React.Component {
     const { pokemons } = this.props;
     return (
       <div className='card'>
-        <span>{name}</span>
-        <span>{type}</span>
-        <span>{`Average weight: ${value}${measurementUnit}`}</span>
-        <img src={image} alt={`An animated gif of the pokemon ${name}`}/>
+        { pokemons.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon.name}/>)}
       </div>
     )
   }
