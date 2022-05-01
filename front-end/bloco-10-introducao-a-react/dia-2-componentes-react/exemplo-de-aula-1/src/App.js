@@ -51,6 +51,15 @@ const orders = [
       currency: "dollars"
   }
 },
+{
+  id: 96,
+  user: "gui@gui.com",
+  product: "MacBook Air 13 M1",
+  price: {
+    value: 999.99,
+    currency: "dollars"
+}
+}
 ];
 
 function App() {
