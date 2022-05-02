@@ -14,6 +14,7 @@ class App extends React.Component {
     this.setState((prevState, _props) => ({
       count: prevState.count + 1
     }))
+    console.log(this.changeColor(this.state.count));
   }
 
   changeColor(num) {
