@@ -1,24 +1,28 @@
 import React from 'react';
 
-function handleClick() {
-  console.log('Dale');
-};
-
-function handleClick2() {
-  console.log('Bom dia');
-}
-
-function handleClick3() {
-  console.log('Provolone');
-}
-
 class App extends React.Component {
+  constructor() {
+    super();
+    console.log('super');
+  }
+
+  handleClick() {
+    console.log('Dale');
+  };
+  
+  handleClick2() {
+    console.log('Bom dia');
+  };
+  
+  handleClick3() {
+    console.log('Provolone');
+  };
   render() {
     return(
       <div>
-      <button onClick={handleClick}>Btn1</button>
-      <button onClick={handleClick2}>Btn2</button>
-      <button onClick={handleClick3}>Btn3</button>
+      <button onClick={this.handleClick}>Btn1</button>
+      <button onClick={this.handleClick2}>Btn2</button>
+      <button onClick={this.handleClick3}>Btn3</button>
       </div>
     );
   }
