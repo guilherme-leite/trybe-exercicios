@@ -4,28 +4,27 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      valor: 0
+      count: 0
     }
-    this.increaseValue = this.increaseValue.bind(this);
-    this.class = this.class.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
+    this.changeColor = this.changeColor.bind(this);
   }
 
-  increaseValue() {
+  clickHandler() {
     this.setState((prevState, _props) => ({
-      valor: prevState.valor + 1,
+      count: prevState.count + 1
     }))
   }
 
-  class(num) {
-    return num % 2 === 0 ? 'green' : 'white';
+  changeColor(num) {
+    return num % 2 === 0 ? 'green' : 'white'
   }
 
   render() {
-    const {valor} = this.state;
-    return (
-      <button style={{ backgroundColor: this.class(valor)}} onClick={ this.increaseValue}>Contador: {this.state.valor}</button>
-    );
+    return(
+      <button style={{ backgroundColor: this.changeColor(this.state.count)}} onClick={this.clickHandler}>Botão contador: {this.state.count}</button>    
+    )
   }
-};
+}
 
 export default App;
