@@ -7,6 +7,7 @@ class App extends React.Component {
       valor: 0
     }
     this.increaseValue = this.increaseValue.bind(this);
+    this.class = this.class.bind(this);
   }
 
   increaseValue() {
@@ -14,10 +15,15 @@ class App extends React.Component {
       valor: prevState.valor + 1,
     }))
   }
-  
+
+  class(num) {
+    return num % 2 === 0 ? 'green' : 'white';
+  }
+
   render() {
+    const {valor} = this.state;
     return (
-      <button onClick={ this.increaseValue}>Contador: {this.state.valor}</button>
+      <button style={{ backgroundColor: this.class(valor)}} onClick={ this.increaseValue}>Contador: {this.state.valor}</button>
     );
   }
 };
