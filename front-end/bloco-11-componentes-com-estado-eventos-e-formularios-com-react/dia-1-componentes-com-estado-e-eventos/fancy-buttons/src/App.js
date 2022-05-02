@@ -7,7 +7,7 @@ function handleClick() {
 class App extends React.Component {
   render() {
     return(
-      <button onClick={handleClick}></button>
+      <button onClick={handleClick}>Btn1</button>
     );
   }
 };
