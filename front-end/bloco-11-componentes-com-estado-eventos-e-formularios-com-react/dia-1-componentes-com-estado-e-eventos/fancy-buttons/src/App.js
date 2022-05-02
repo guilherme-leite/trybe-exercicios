@@ -3,10 +3,12 @@ import React from 'react';
 class App extends React.Component {
   constructor() {
     super();
-    console.log('super');
+    console.log('this no constructor', this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
+    console.log('This no handleClick', this);
     console.log('Dale');
   };
   
