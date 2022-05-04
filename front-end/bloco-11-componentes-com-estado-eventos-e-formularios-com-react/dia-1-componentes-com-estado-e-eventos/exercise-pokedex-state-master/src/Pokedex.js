@@ -10,8 +10,14 @@ class Pokedex extends React.Component {
         };
     }
 
-    pokemonFilter(filter) {
-        this.setState({ filter, pokemonIndex: 0 });
+    filterPokemon(filteredType) {
+        this.setState({ filteredType, pokemonIndex: 0 });
+    }
+
+    nextPokemon(numberOfPokemon) {
+        this.setState(state => ({
+            pokemonIndex: (state.pokemonIndex + 1) % numberOfPokemon,
+        }));
     }
 
     render() {
