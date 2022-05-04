@@ -20,6 +20,15 @@ class Pokedex extends React.Component {
         }));
     }
 
+    fetchFilteredPokemons() {
+        const { pokemons } = this.props;
+        const { filteredType } = this.state;
+
+        return pokemons.filter(pokemon => {
+            return filteredType === 'all' ? true : pokemon.type === filteredType;
+        });
+    }
+
     render() {
         return (
             <div className="pokedex">
