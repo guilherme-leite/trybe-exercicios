@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokemon from './Pokemon';
+import Button from './Button';
 
 class Pokedex extends React.Component {
     constructor() {
@@ -35,10 +36,37 @@ class Pokedex extends React.Component {
     }
 
     render() {
+        const filteredPokemons = this.fetchFilteredPokemons();
+        const pokemonTypes = this.fetchPokemonTypes;
+        const pokemon = filteredPokemons[this.state.pokemonIndex];
 
         return (
             <div className="pokedex">
-                {this.props.pokemons.map(pokemon => <Pokemon key={pokemon.id} pokemon={pokemon} />)}
+                <Pokemon pokemon={ pokemon } />
+                <div className='pokedex-buttons-panel'>
+                    <Button
+                    onClick={() => this.filterPokemons('all')}
+                    className='filter-button'
+                    >
+                        All
+                    </Button>
+                    {pokemonTypes.map(type => (
+                     <Button 
+                     key={ type }
+                     onClick={() => this.filterPokemons(type)}
+                     className='filter-button'
+                     >
+                         { type }
+                     </Button>
+                    ))}
+                </div>
+                    <Button 
+                        className='pokedex-button'
+                        onClick={() => this.nextPokemon(filteredPokemons.lenght)}
+                        disabled={ filteredPokemons.lenght <= 1 }
+                    >
+                        Próximo pokemon
+                     </Button>
             </div>
         );
     }
