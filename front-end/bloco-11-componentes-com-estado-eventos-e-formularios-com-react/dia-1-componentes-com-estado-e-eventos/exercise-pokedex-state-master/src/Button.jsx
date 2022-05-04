@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ className, children, disabled, onclick }) => (
+const Button = ({ className, children, disabled, onClick }) => (
   <button
     onClick={ onClick }
     className={`button-text ${className}`}
