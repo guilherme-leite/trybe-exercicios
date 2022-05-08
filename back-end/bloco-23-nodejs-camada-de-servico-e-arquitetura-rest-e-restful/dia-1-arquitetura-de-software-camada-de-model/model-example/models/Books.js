@@ -1,4 +1,5 @@
 const connection = require('./connection');
+const Author = require('./Author');
 
 const serialize = (booksData) => ({
   id: booksData.id,
@@ -19,15 +20,15 @@ const getByAuthorId = async (authorId) => {
   return books.map(serialize);
 };
 
-const isValid = (title, author_id) => {
-  if(!title || title.length < 3) return false;
-  if(!author_id || typeof author_id !== 'number') return false;
+const isValid = async (title, author_id) => {
+  if(!title || typeof title !== 'string' || title.length < 3) return false;
+  if(!author_id || typeof author_id !== 'number' || !(await Author.findById(author_id))) return false;
 
   return true;
 };
 
 const create = async (title, author_id) => {
-  await connection.execute('INSERT INTO model_example.books (title, author_id) VALUES (?, ?);',[title, author_id]);
+  await connection.execute('INSERT INTO model_example.books (title, author_id) VALUES (?, ?)',[title, author_id]);
 };
 
 module.exports = {
