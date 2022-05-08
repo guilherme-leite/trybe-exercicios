@@ -19,7 +19,15 @@ const getByAuthorId = async (authorId) => {
   return books.map(serialize);
 };
 
+const isValid = (title, author_id) => {
+  if(!title || title.length < 3) return false;
+  if(!author_id || typeof author_id !== 'number') return false;
+
+  return true;
+};
+
 module.exports = {
   getAll,
   getByAuthorId,
+  isValid,
 };
