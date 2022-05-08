@@ -1,4 +1,5 @@
 const { get } = require('express/lib/request');
+const { execute } = require('./connection');
 const connection = require('./connection');
 
 const getNewAuthor = ({ id, firstName, middleName, lastName }) => {
@@ -45,8 +46,14 @@ const isValid = (firstName, middleName, lastName) => {
   return true;
 };
 
+const create = async (first_name, middle_name, last_name) => {
+  connect.execute('INSERT INTO model_example.Authors (first_name, middle_name, last_name) VALUES (?, ?, ?);'),
+  [firstName, middleName, lastName]
+};
+
 module.exports = {
   getAll,
   findById,
   isValid,
+  create
 };
