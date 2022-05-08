@@ -1,5 +1,5 @@
-const bodyParser = require('body-parser');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const Author = require('./models/Author');
 const Books = require('./models/Books');
@@ -22,13 +22,15 @@ app.get('/authors/:id', async (req, res) => {
 });
 
 app.post('/authors', async (req, res) => {
-  const { firstName, middleName, lastName } = req.body;
+  const { first_name, middle_name, last_name } = req.body;
 
-  if(!Author.isValid(firstName, middleName, lastName)) return res.status(400).json({ message: 'Dados inválidos' });
+  console.log(req.body);
 
-  await Author.create(firstName, middleName, lastName);
+  if(!Author.isValid(first_name, middle_name, last_name)) return res.status(400).json({ message: 'Dados inválidos' });
 
-  res.status(200).json({ message: 'New Author created' }); 
+  await Author.create(first_name, middle_name, last_name);
+
+  res.status(200).json({ message: 'New Author created' });
 });
 
 app.get('/books', async (_req, res) => {

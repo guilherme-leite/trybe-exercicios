@@ -1,5 +1,3 @@
-const { get } = require('express/lib/request');
-const { execute } = require('./connection');
 const connection = require('./connection');
 
 const getNewAuthor = ({ id, firstName, middleName, lastName }) => {
@@ -39,16 +37,15 @@ const findById = async (id) => {
    return getNewAuthor({ id, firstName, middleName, lastName });
 };
 
-const isValid = (firstName, middleName, lastName) => {
-  if(!firstName || typeof firstName !== 'string') return false;
-  if(!lastName || typeof lastName !== 'string') return false;
+const isValid = (first_name, middle_name, last_name) => {
+  if(!first_name || typeof first_name !== 'string') return false;
+  if(!last_name || typeof last_name !== 'string') return false;
 
   return true;
 };
 
 const create = async (firstName, middleName, lastName) => {
-  connect.execute('INSERT INTO model_example.Authors (first_name, middle_name, last_name) VALUES (?, ?, ?);'),
-  [firstName, middleName, lastName]
+  await connection.execute('INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?);',[firstName, middleName, lastName])
 };
 
 module.exports = {
