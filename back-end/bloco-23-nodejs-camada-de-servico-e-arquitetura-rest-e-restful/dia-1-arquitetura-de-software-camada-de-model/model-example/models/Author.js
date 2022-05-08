@@ -38,7 +38,15 @@ const findById = async (id) => {
    return getNewAuthor({ id, firstName, middleName, lastName });
 };
 
+const isValid = (firstName, middleName, lastName) => {
+  if(!firstName || typeof firstName !== 'string') return false;
+  if(!lastName || typeof lastName !== 'string') return false;
+
+  return true;
+};
+
 module.exports = {
   getAll,
   findById,
+  isValid,
 };
