@@ -14,6 +14,12 @@ app.get('/books', async (_req, res) => {
   res.status(200).json(books);
 });
 
+app.get('/books/:id', async (req, res) => {
+  const { id } = req.params;
+  const book = await Books.getByAuthorId(id);
+  res.status(200).json(book);
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
