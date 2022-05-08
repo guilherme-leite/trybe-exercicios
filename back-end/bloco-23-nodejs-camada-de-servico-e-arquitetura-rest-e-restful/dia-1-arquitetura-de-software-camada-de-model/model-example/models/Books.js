@@ -26,8 +26,13 @@ const isValid = (title, author_id) => {
   return true;
 };
 
+const create = async (title, author_id) => {
+  await connection.execute('INSERT INTO model_example.books (title, author_id) VALUES (?, ?);',[title, author_id]);
+};
+
 module.exports = {
   getAll,
   getByAuthorId,
   isValid,
+  create
 };
