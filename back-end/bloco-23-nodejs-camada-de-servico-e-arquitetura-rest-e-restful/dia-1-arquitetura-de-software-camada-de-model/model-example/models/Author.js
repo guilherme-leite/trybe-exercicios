@@ -46,7 +46,7 @@ const isValid = (firstName, middleName, lastName) => {
   return true;
 };
 
-const create = async (first_name, middle_name, last_name) => {
+const create = async (firstName, middleName, lastName) => {
   connect.execute('INSERT INTO model_example.Authors (first_name, middle_name, last_name) VALUES (?, ?, ?);'),
   [firstName, middleName, lastName]
 };
