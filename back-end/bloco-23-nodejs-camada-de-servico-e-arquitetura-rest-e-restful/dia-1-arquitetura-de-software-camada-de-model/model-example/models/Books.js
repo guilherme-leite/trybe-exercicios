@@ -8,7 +8,7 @@ const serialize = (booksData) => ({
 });
 
 const getAll = async () => {
-  const [books] = await connection.execute('  SELECT * FROM model_example.books;');
+  const [books] = await connection.execute('SELECT * FROM model_example.books;');
   return books.map(serialize);
 };
 
