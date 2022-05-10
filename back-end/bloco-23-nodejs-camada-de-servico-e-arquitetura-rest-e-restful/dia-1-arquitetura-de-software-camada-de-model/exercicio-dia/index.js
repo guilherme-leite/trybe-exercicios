@@ -6,9 +6,7 @@ const middlewares = require('./middlewares/index');
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/user', (req, res) => {
-  
-});
+app.post('/user', middlewares.createUser);
 
 const PORT = process.env.PORT || 3001;
 
