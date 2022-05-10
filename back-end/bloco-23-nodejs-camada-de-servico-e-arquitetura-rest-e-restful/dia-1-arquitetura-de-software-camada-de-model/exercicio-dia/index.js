@@ -1,8 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const middlewares = require('./middlewares/index');
+
 
 const app = express();
-app.use(bodyParser);
+app.use(bodyParser.json());
+
+app.post('/user', (req, res) => {
+  
+});
 
 const PORT = process.env.PORT || 3001;
 
