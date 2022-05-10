@@ -7,7 +7,7 @@ const serialize = (userData) => ({
   email: userData.email,
 });
 
-const createUser = ({ firstName, lastName, email, password }) => {
+const create = ({ firstName, lastName, email, password }) => {
   const query = 'INSERT INTO users (first_name, last_name, email, password) VALUES (?,?,?,?)';
 
   return connection.execute(query, [firstName, lastName, email, password]).then(([result]) => ({ id: result.insertId, firstName, lastName, email }));
@@ -15,5 +15,5 @@ const createUser = ({ firstName, lastName, email, password }) => {
 
 module.exports = {
   serialize,
-  createUser
+  create
 };
