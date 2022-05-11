@@ -41,7 +41,7 @@ app.delete('/char/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    await connection.execute('DELETE FROM users_crud.users WHERE id= ?'
+    await connection.execute('DELETE FROM users_crud.users WHERE id = ?',
     [id] );
 
     res.status(200).json({ message: 'Sucesso'});
