@@ -6,7 +6,13 @@ const getAll = async () => {
 }
 
 const createSong = async (name, album) => {
-  const newSong = await connection.execute('INSERT INTO musics.songs (name, album) VALUES (?, ?)', [name, album]);
+  const [data] = await connection.execute('INSERT INTO musics.songs (name, album) VALUES (?, ?)', [name, album]);
+
+  const newSong = {
+    id: data.insert.id,
+    name, 
+    album
+  }
 
   return newSong;
 }
