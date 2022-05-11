@@ -23,4 +23,18 @@ app.get('/char',async (req, res) => {
   }
 });
 
+app.post('/char', async (req, res) => {
+  try {
+    const { email, first_name, last_name, password } = req.body;
+    
+    const [result] = await connection.execute(
+      'INSERT INTO users_crud.users (email, first_name, last_name, password) VALUES (?, ?, ?, ?)', [email, first_name, last_name, password]
+    );
+    return res.status(200).json(result);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send('Erro ao realizar a operacao');
+  }
+})
+
 app.listen(PORT, console.log(`Ouvindo na porta ${PORT}`));
