@@ -1,4 +1,6 @@
 const express = require('express');
+const mysql = require('mysql2/promise');
+
 const app = express();
 const PORT = 3001;
 
@@ -9,7 +11,7 @@ const connection = mysql.createPool({
   password: 'docker',
 });
 
-app.get('/char', (req, res) => {
+app.get('/char',async (req, res) => {
   try {
     const result = await connection.execute('SELECT * FROM users_crud.users');
     return res.status(200).json(res);
