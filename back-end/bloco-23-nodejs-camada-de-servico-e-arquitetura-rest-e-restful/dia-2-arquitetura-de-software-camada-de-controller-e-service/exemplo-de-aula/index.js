@@ -1,11 +1,12 @@
 const express = require('express');
 
+const songsModel = require('./models/songsModel');
+
 const app = express();
 const PORT = 3001;
 
 app.get('/musics',async (req, res) => {
-
-  const [musics] = await connection.execute('SELECT * FROM musics.songs');  
+  const musics = await songsModel.getAll();
 
   return res.status(200).json(musics);
 });
