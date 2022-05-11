@@ -4,6 +4,8 @@ const mysql = require('mysql2/promise');
 const app = express();
 const PORT = 3001;
 
+app.use(express().json());
+
 const connection = mysql.createPool({
   host: 'localhost',
   user: 'root',
@@ -13,7 +15,7 @@ const connection = mysql.createPool({
 
 app.get('/char',async (req, res) => {
   try {
-    const result = await connection.execute('SELECT * FROM users_crud.users');
+    const [result] = await connection.execute('SELECT * FROM users_crud.users');
     return res.status(200).json(result);
   } catch(error) {
     console.log('internal server error', error.message);
