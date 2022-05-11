@@ -1,6 +1,6 @@
 const connection = require('./connection');
 
-const getAll = async () => {
+const getAllSongs = async () => {
   const [musics] = await connection.execute('SELECT * FROM musics.songs');
   return musics;
 }
@@ -18,6 +18,6 @@ const createSong = async (name, album) => {
 }
 
 module.exports = {
-  getAll,
+  getAllSongs,
   createSong,
 };

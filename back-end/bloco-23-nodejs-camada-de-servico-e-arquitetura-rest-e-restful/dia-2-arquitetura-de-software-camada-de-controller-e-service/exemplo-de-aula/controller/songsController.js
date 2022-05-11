@@ -1,7 +1,7 @@
 const songsService = require('../services/songsService');
 
-const musicsList = (req, res, _next) => {
-  const musics = songsService.getAll();
+const musicsList = async (req, res, _next) => {
+  const musics = await songsService.getAll();
 
   return res.status(200).json(musics);
 };

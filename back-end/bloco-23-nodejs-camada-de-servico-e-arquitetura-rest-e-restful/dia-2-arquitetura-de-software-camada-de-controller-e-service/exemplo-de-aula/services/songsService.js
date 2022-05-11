@@ -1,7 +1,7 @@
 const songsModel = require('../models/songsModel');
 
-const getAll = async () => {
-  const musics = await songsModel.getAllSongs();
+const getAll = () => {
+  const musics = songsModel.getAllSongs();
 
   return musics;
 };
