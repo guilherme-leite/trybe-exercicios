@@ -13,7 +13,7 @@ const connection = mysql.createPool({
 
 app.get('/musics',async (req, res) => {
 
-  const musics = await connection.execute('SELECT * FROM musics.songs');  
+  const [musics] = await connection.execute('SELECT * FROM musics.songs');  
 
   return res.status(200).json(musics);
 });
