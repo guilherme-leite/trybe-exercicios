@@ -7,7 +7,7 @@ const getAll = () => {
 };
 
 const newSong = async (name, album) => {
-  if(name === undefined || name.length <= 3) return false;
+  if(name === undefined || name.length <= 3) throw { message: 'Não foi possivel cadastrar' };
   
   const newMusic = await songsModel.createSong(name, album);
 
