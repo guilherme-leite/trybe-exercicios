@@ -8,11 +8,14 @@ const musicsList = async (req, res, _next) => {
 
 const newSong = async (req, res) => {
   try {
-    const newMusic = await musicService.newSong();
+    const { name, album } = req.body;
+
+    const newMusic = await songsService.newSong(name, album);
   
-    return res.staus(201).json(newMusic);
+    return res.status(201).json(newMusic);
   } catch (error) {
     console.log('erro ao cadastrar', error.message);
+    return res.status(400).json({ message: error.message });
   }
 };
 
