@@ -35,6 +35,21 @@ app.post('/char', async (req, res) => {
     console.error(error);
     return res.status(500).send('Erro ao realizar a operacao');
   }
-})
+});
+
+app.delete('/char/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await connection.execute('DELETE FROM users_crud.users WHERE id= ?'
+    [id] );
+
+    res.status(200).json({ message: 'Sucesso'});
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({ message: 'Erro ao tentar realizar operacão' });
+  } 
+});
 
 app.listen(PORT, console.log(`Ouvindo na porta ${PORT}`));
