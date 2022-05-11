@@ -4,7 +4,7 @@ const mysql = require('mysql2/promise');
 const app = express();
 const PORT = 3001;
 
-app.use(express().json());
+app.use(express.json());
 
 const connection = mysql.createPool({
   host: 'localhost',
