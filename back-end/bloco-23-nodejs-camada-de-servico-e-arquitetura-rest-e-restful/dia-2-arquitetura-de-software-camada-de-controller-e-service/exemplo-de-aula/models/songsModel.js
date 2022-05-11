@@ -5,6 +5,11 @@ const getAll = async () => {
   return musics;
 }
 
+const createSong = async (name, album) => {
+  const newSong = await connection.execute('INSERT INTO musics.songs (name, album) VALUES (?, ?)', [name, album]);
+}
+
 module.exports = {
   getAll,
-}
+  createSong,
+};
