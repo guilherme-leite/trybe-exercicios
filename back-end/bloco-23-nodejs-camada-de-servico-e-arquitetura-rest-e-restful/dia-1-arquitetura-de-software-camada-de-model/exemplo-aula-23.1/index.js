@@ -5,13 +5,13 @@ const PORT = 3001;
 const connection = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  database: 'live_lecture_23_1',
+  database: 'users_crud',
   password: 'docker',
 });
 
 app.get('/char', (req, res) => {
   try {
-    const result = await connection.execute('SELECT * FROM live_lecture_23_1.characters');
+    const result = await connection.execute('SELECT * FROM users_crud.users');
     return res.status(200).json(res);
   } catch(error) {
     console.log('internal server error', error.message);
