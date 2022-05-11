@@ -1,5 +1,7 @@
 const express = require('express');
 
+const userModel = require('./models/userModel');
+
 const app = express();
 const PORT = 3001;
 
@@ -7,7 +9,7 @@ app.use(express.json());
 
 app.get('/char',async (req, res) => {
   try {
-    const [result] = await connection.execute('SELECT * FROM users_crud.users');
+    const result = await userModel.getAll();
     return res.status(200).json(result);
   } catch(error) {
     console.log('internal server error', error.message);
