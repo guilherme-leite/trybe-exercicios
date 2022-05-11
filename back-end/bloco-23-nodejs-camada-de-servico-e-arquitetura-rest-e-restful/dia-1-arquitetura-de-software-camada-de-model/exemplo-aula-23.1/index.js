@@ -14,7 +14,7 @@ const connection = mysql.createPool({
 app.get('/char',async (req, res) => {
   try {
     const result = await connection.execute('SELECT * FROM users_crud.users');
-    return res.status(200).json(res);
+    return res.status(200).json(result);
   } catch(error) {
     console.log('internal server error', error.message);
     return res.status(520).json({ message: 'error'});
