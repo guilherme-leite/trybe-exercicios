@@ -9,7 +9,7 @@ const createSong = async (name, album) => {
   const [data] = await connection.execute('INSERT INTO musics.songs (name, album) VALUES (?, ?)', [name, album]);
 
   const newSong = {
-    id: data.insert.id,
+    id: data.insertId,
     name, 
     album
   }
