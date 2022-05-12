@@ -13,13 +13,13 @@ const registerStudent = async (student) => {
   const classExits = await classModel.classById(class_id);
 
   if(classExits.length === 0) {
-    console.log('Classe não existe!');
-  }
+    throw { message: `Class not found`}
+  };
 
   const registredStudent = await studentModel.createStudents(name, age, class_id);
 
   return registredStudent;
-}
+};
 
 module.exports = {
   getStudent,
