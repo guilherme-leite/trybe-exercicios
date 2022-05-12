@@ -5,7 +5,7 @@ const classRouter = require('./class/index');
 
 const router = express.Router();
 
-router.use('/student', studentRouter);
-router.use('/class', classRouter);
+router.use('/students', studentRouter);
+router.use('/classes', classRouter);
 
 module.exports = router;
