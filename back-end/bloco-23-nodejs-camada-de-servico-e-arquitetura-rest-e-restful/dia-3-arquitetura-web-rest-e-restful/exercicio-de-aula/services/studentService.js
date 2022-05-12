@@ -13,7 +13,7 @@ const registerStudent = async (student) => {
   const classExits = await classModel.classById(class_id);
 
   if(classExits.length === 0) {
-    throw { message: `Class not found`}
+    throw { status: 404, message: `Class not found`}
   };
 
   const registredStudent = await studentModel.createStudents(name, age, class_id);
