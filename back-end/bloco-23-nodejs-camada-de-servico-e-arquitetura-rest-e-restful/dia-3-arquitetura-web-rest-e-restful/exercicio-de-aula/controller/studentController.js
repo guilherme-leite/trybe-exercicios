@@ -10,6 +10,17 @@ const listStudents = async (req, res, next) => {
   }
 };
 
+const createNewStudent = async (req, res, next) => {
+  try {
+    const newStudent = await studentService.registerStudent(req.body);
+    res.status(200).json(newStudent);
+  } catch (error) {
+    console.log('error createNewStudent', error.message);
+    next(error);
+  } 
+}
+
 module.exports = {
   listStudents,
+  createNewStudent,
 }
