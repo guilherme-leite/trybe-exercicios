@@ -12,7 +12,7 @@ const registerStudent = async (student) => {
 
   const classExits = await classModel.classById(class_id);
 
-  if(!classExits) {
+  if(classExits.length === 0) {
     console.log('Classe não existe!');
   }
 
