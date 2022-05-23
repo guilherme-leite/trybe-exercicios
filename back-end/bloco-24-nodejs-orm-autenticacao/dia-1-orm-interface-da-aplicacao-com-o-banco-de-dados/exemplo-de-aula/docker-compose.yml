@@ -21,7 +21,7 @@ services:
       - SERVER_PORT=3001
     volumes:
       - ./:/usr/app
-    working_dir: /usr/app
+    working_dir:  home/guilherme/repositorios/trybe-exercicios/back-end/bloco-24-nodejs-orm-autenticacao/dia-1-orm-interface-da-aplicacao-com-o-banco-de-dados/exemplo-de-aula
     command: bash
     # As duas opções abaixo correspondem ao -it
     tty: true # -t
