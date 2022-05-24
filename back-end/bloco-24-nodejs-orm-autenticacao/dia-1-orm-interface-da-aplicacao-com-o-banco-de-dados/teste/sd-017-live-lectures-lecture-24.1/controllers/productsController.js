@@ -5,9 +5,9 @@ const prodRouter = express.Router();
 
 prodRouter.post('/', async (req, res) => {
 	try {
-		const { name } = req.body;
+		const { name, description } = req.body;
 
-		const newProduct = await ProductService.create(name);
+		const newProduct = await ProductService.create(name, description);
 
 		return res.status(201).json(newProduct);
 	} catch (error) {

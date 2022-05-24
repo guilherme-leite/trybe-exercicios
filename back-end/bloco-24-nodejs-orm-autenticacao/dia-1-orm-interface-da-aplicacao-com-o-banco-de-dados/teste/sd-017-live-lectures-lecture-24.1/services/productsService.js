@@ -1,6 +1,6 @@
 const { Product } = require('../models');
 
-const create = async (nome) => {
+const create = async () => {
 
 };
 
@@ -8,11 +8,11 @@ const getAll = async () => {
 
 };
 
-const remove = async (id) => {
+const remove = async () => {
 
 };
 
-const edit = async (id, name, description) => {
+const edit = async () => {
 
 };
 
