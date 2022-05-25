@@ -2,7 +2,7 @@ const express = require('express');
 const { User } = require('../models');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', async (_req, res) => {
   try {
     const users = await User.findAll();
 
@@ -12,3 +12,5 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   };
 });
+
+module.exports = router;
