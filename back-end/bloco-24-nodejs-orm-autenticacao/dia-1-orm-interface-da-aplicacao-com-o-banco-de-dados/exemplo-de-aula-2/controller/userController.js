@@ -50,10 +50,12 @@ router.put('/:id', async (req, res) => {
 
     const [ updatedUser ] = await User.update(
       { fullName, email },
-      { where: { id }},
+      { where: { id } },
     );
     
     console.log('retorno updatedUser', updatedUser);
+
+    if(!updatedUser) return res.status(404).json({ message: 'Usuário não encontrado!'});
 
     return res.status(200).json({ message: 'Usuário atualizado com sucesso!' });
   } catch (error) {
