@@ -64,4 +64,20 @@ router.put('/:id', async (req, res) => {
   };
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedUser = await User.destroy(
+      { where: { id }},
+    );
+
+    console.log('retorno deletedUser', deletedUser);
+
+    return res.status(200).json({ message: 'Usuário deletado com sucesso'});
+  } catch (erro) {
+    console.log('erro delete', error.message);
+    res.status(500).json({ message: 'Internal server error'})
+  };
+});
+
 module.exports = router;
