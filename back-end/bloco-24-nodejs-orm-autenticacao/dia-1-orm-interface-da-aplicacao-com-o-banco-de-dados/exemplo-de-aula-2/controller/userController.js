@@ -2,11 +2,14 @@ const express = require('express');
 const { User } = require('../models');
 const router = express.Router();
 
-router.get('/', async (_req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const users = await User.findAll();
+    const { id } = req.params;
+    const user = await User.findByPk(id);
 
-    return res.status(200).json(users);
+    if (!user) return res.status(404).json({ message: 'Usuário não encontrado'});
+
+    return res.status(200).json(user);
   } catch (error) {
     console.log('error userController', error.message);
     res.status(500).json({ message: 'Internal Server Error' });
