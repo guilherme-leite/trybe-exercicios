@@ -5,8 +5,8 @@ const getAll = async () => {
   return books;
 };
 
-const getById = async () => {
-  const book = await Book.findById();
+const getById = async (id) => {
+  const book = await Book.findById(id);
   return book;
 };
 
