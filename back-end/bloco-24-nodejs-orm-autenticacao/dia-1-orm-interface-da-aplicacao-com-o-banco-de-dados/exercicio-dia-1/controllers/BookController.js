@@ -22,6 +22,7 @@ const create = async (req, res) => {
 }
 
 const update = async (req, res) => {
+  const { id } = req.params;
   const { title, author, pageQuantity } = req.body;
   const updatedBook = await BookService.update(id, {title, author, pageQuantity});
 
