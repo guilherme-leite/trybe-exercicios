@@ -10,9 +10,7 @@ const getById = async (id) => {
   return book;
 };
 
-const create = async () => {
-  const { title, author, pageQuantity } = req.body;
-  
+const create = async (title, author, pageQuantity) => {
   const newBook = await Book.create(title, author, pageQuantity);
   return newBook;
 };
