@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
   });
 
-  Employee.assossiate = (models) => {
+  Employee.associate = (models) => {
     Employee.hasOne(models.Address,
       { foreignKey: 'employeeId', as: 'addresses' });
   };
