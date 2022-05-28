@@ -31,7 +31,7 @@ const update = async (req, res) => {
   return res.status(200).json({ message: "Book updated"});
 };
 
-const remove = async (rec, res) {
+const remove = async (rec, res) => {
   const { id } = req.params;
   const removed = await BookService.remove(id);
 
