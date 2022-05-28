@@ -26,10 +26,16 @@ const remove = async (id) => {
   return removed;
 };
 
+const getByAuthor = async (author) => {
+  const books = await Book.findAll({ where: { author } });
+  return books;
+};
+
 module.exports = {
   getAll,
   getById,
   create,
   update,
-  remove
+  remove,
+  getByAuthor
 };
