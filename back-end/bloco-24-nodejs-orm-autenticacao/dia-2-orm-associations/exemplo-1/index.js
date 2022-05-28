@@ -14,9 +14,9 @@ app.get('/employees', async (req, res) => {
     console.log('erro rota /employees', error.message);
     res.status(500).json({ message: 'Internal server error'});
   };
-
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 module.exports = app;
