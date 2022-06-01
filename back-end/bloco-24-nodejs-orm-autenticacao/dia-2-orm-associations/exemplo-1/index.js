@@ -1,7 +1,15 @@
 const express = require('express');
+const Sequelize = require('sequelize');
+
+const config = require('./config/config');
+
+const bodyParser = require('body-parser');
 const { Address, Employee, Book, User } = require('./models');
 
 const app = express();
+app.use(bodyParser.json());
+
+const sequelize = new Sequelize(config.development);
 
 app.get('/employees', async (req, res) => {
   try {
@@ -39,6 +47,27 @@ app.get('/employees/:id', async (req, res) => {
   };
 });
 
+app.post('/employees', async (req, res) => {
+  const t = await sequelize.transaction();
+
+  try {
+    const { firstName, lastName, age, city, street, number } = req.body;
+
+    const result = await sequelize.transaction(async (t) => {
+      const employee = await Employee.create({ firstName, lastName, age }, { transaction: t });
+      
+      await Address.create({ city, street, number, employeeId: employee.id }, { transaction: t });
+
+
+      return res.status(201).json({ message: 'Cadastrado com sucesso' });
+    });
+
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+});
+
 app.get('/usersbooks/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -56,6 +85,8 @@ app.get('/usersbooks/:id', async (req, res) => {
     console.log(error.message);
     res.status(500).json({ message: 'Internal server error' });
   };
+
+  
 });
 
 const PORT = process.env.PORT || 3000;
