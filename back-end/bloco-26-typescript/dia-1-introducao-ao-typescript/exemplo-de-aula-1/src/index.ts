@@ -4,3 +4,8 @@ let isTryber: boolean = true;
 
 let stringOrNumber: string | number = 'gui'
 stringOrNumber = 'Guigo';
+
+let anyValue: any = 10;
+anyValue = 'GUigo';
+anyValue = true;
+anyValue = undefined;
