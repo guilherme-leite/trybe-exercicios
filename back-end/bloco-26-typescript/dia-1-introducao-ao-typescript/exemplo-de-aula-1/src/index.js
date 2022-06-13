@@ -1,0 +1,20 @@
+var nome = 'Gui';
+var idade = 10;
+var isTryber = true;
+var stringOrNumber = 'gui';
+stringOrNumber = 'Guigo';
+var anyValue = 10;
+anyValue = 'GUigo';
+anyValue = true;
+anyValue = undefined;
+var x;
+var y = 0;
+var z = 123.456;
+var studentStatus;
+(function (studentStatus) {
+    studentStatus[studentStatus["Active"] = 1] = "Active";
+    studentStatus[studentStatus["Inactive"] = 2] = "Inactive";
+    studentStatus[studentStatus["Paused"] = 3] = "Paused";
+})(studentStatus || (studentStatus = {}));
+var newStudentStatus = studentStatus.Active;
+console.log(newStudentStatus);

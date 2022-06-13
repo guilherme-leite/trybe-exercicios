@@ -14,3 +14,13 @@ let x: number;
 
 let y: number = 0;
 let z: number = 123.456;
+
+enum studentStatus {
+  Active = 1,
+  Inactive,
+  Paused,
+}
+
+let newStudentStatus: studentStatus = studentStatus.Active;
+
+console.log(newStudentStatus);
