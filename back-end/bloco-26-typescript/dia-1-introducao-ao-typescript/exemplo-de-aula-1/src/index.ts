@@ -23,4 +23,68 @@ enum studentStatus {
 
 let newStudentStatus: studentStatus = studentStatus.Active;
 
-console.log(newStudentStatus);
+enum StatusCodes {
+  OK = 200,
+  BadRequest = 400,
+  Unauthorized,
+  PaymentRequired,
+  Forbidden,
+  NotFound,
+}
+
+const ok = StatusCodes.OK;
+const okIndex = StatusCodes["OK"];
+const stringBadRequest = StatusCodes[400];
+
+// console.log(ok);
+// console.log(okIndex);
+// console.log(stringBadRequest);
+
+enum DaysOfWeek {
+  SUNDAY = 1,
+  MONDAY,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+  SATURDAY,
+}
+
+const today = DaysOfWeek[2];
+const todaysIndex = DaysOfWeek.MONDAY;
+const yesterday = DaysOfWeek[7];
+
+console.log('weekDay', today);
+console.log('weekDay', todaysIndex);
+console.log('weekDay', yesterday);
+
+enum ColorsOfTheRainbow {
+  red = 1,
+  orange,
+  yellow,
+  green,
+  blue,
+  indigo,
+  violet,
+}
+
+console.log('color', ColorsOfTheRainbow[3]);
+
+enum PrinterActions {
+  salvar = 1,
+  imprimir,
+  abrir,
+  visualizar,
+  fechar
+}
+
+console.log('printerActions', PrinterActions[4]);
+
+enum CardinalPoints {
+  north = 1,
+  east,
+  south,
+  west
+}
+
+console.log('Cardinals', CardinalPoints[2]);
