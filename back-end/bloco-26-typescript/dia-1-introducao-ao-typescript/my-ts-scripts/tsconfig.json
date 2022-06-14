@@ -1,6 +1,5 @@
 // ./tsconfig.json
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     "target": "es2016",                                 
     "module": "commonjs",
