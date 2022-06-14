@@ -26,4 +26,8 @@ const hemispheres = {
   'South': seasonsSouth
 }
 
-const choiceHemispher = readline.keyInSelect(Object.keys(hemispheres));
+const choiceHemisphere = readline.keyInSelect(Object.keys(hemispheres));
+
+const month = Object.values(Months)[choiceMonth];
+
+const hemisphere = Object.keys(hemispheres)[choiceHemisphere];
