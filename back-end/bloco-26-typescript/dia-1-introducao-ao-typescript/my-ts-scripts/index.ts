@@ -31,3 +31,14 @@ const choiceHemisphere = readline.keyInSelect(Object.keys(hemispheres));
 const month = Object.values(Months)[choiceMonth];
 
 const hemisphere = Object.keys(hemispheres)[choiceHemisphere];
+
+console.log(`Month: \n${month}`);
+console.log(`Hemisphere: \n${hemisphere}`);
+console.log(`Seasons:`);
+const chosenHemisphereSeasons = Object.values(hemispheres)[choiceHemisphere];
+Object.entries(chosenHemisphereSeasons).map((entry) => {
+    const seasons = entry[0];
+    const months = entry[1];
+
+    if (months.includes(month)) console.log(seasons);
+});
