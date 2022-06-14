@@ -20,3 +20,10 @@ const seasonsNorth = {
   [Seasons.OUTUMN]: seasonsSouth[Seasons.SPRING],
   [Seasons.WINTER]: seasonsSouth[Seasons.SUMMER],
 }
+
+const hemispheres = {
+  'North': seasonsNorth,
+  'South': seasonsSouth
+}
+
+const choiceHemispher = readline.keyInSelect(Object.keys(hemispheres));

@@ -20,3 +20,8 @@ const seasonsNorth = {
     [Seasons_1.default.OUTUMN]: seasonsSouth[Seasons_1.default.SPRING],
     [Seasons_1.default.WINTER]: seasonsSouth[Seasons_1.default.SUMMER],
 };
+const hemispheres = {
+    'North': seasonsNorth,
+    'South': seasonsSouth
+};
+const choiceHemispher = readline_sync_1.default.keyInSelect(Object.keys(hemispheres));
