@@ -35,7 +35,9 @@ const hemisphere = Object.keys(hemispheres)[choiceHemisphere];
 console.log(`Month: \n${month}`);
 console.log(`Hemisphere: \n${hemisphere}`);
 console.log(`Seasons:`);
+
 const chosenHemisphereSeasons = Object.values(hemispheres)[choiceHemisphere];
+
 Object.entries(chosenHemisphereSeasons).map((entry) => {
     const seasons = entry[0];
     const months = entry[1];
