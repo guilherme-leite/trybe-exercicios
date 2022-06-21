@@ -16,3 +16,9 @@ class Mammal extends Animal {
     console.log(`${this.name} está andando!`);
   }
 }
+
+const tiger = new Mammal(
+  'Tigre',
+  new Date(Date.parse('May 03, 2020'))
+);
+
