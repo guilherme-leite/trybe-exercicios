@@ -9,3 +9,10 @@ class Animal {
     return Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
   }
 }
+
+
+class Mammal extends Animal {
+  walk() {
+    console.log(`${this.name} está andando!`);
+  }
+}
