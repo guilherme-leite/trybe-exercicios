@@ -8,11 +8,16 @@ class Superclass {
     }
 }
 class SubClass extends Superclass {
+    sayHello2() {
+        this.sayHello();
+    }
 }
 const myFunc = (object) => {
-    object.sayHello();
+    object.sayHello2();
 };
-const obj1 = new Superclass(true);
+// const obj1 = new Superclass(
+//   true,
+// );
 const obj2 = new SubClass(true);
-myFunc(obj1);
+// myFunc(obj1);
 myFunc(obj2);
