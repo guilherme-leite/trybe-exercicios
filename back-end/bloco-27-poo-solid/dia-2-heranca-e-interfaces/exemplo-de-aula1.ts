@@ -33,6 +33,11 @@ class Bird extends Animal {
   fly() {
     console.log(`${this.name} está voando!`);
   }
+
+  showBirthDate() {
+    console.log(this.birthDate);
+    
+  }
 }
 
 const parrot = new Bird(
