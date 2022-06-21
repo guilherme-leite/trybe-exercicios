@@ -22,3 +22,9 @@ const tiger = new Mammal(
   new Date(Date.parse('May 03, 2020'))
 );
 
+const main = (animal: Animal) => {
+  console.log(animal.age);
+}
+
+main(tiger);
+tiger.walk();
