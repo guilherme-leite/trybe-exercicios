@@ -1,5 +1,5 @@
 class Animal {
-  constructor(public name: string, private birthDate: Date) { }
+  constructor(public name: string, protected birthDate: Date) { }
 
   get age() {
     const timeDiff = Math.abs(
