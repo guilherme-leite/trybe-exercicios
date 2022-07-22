@@ -2,7 +2,7 @@ class Tv {
   private _brand: string;
   private _size: number;
   private _resolution: string;
-  private _connections: string[];
+  private _connections: Array<string>;
   private _connectedTo?: string;
 
   constructor(brand: string, size: number, resolution: string, connections: string[]) {
@@ -13,7 +13,7 @@ class Tv {
   }
 
   turnOn():void {
-    console.log(`${this._brand} ${this._size} ${this._brand} ${this._resolution} ${this._connections}`);
+    console.log(`This TV's brand is ${this._brand} and it's a ${this._size} inches ${this._resolution} with ${this._connections} connections available`);
   }
 
   get connectedTo(): string {
@@ -24,18 +24,16 @@ class Tv {
     if (this._connections.includes(value)) {
       this._connectedTo = value;
       console.log(this._connectedTo);
-      
     } else {
       console.log('Sorry, connection unavailable!');
     }
   }
 }
 
-const tV1 = new Tv('lg', 42, 'full hd', ['hdmi', 'wifi'])
+const sampTv = new Tv('samp', 24, 'fullHd', ['hdmi', 'vca', 'rca']);
 
-tV1.turnOn();
+sampTv.turnOn();
 
-tV1.connectedTo = 'hdmi';
+sampTv.connectedTo = 'ethernet';
 
-console.log(`this tv is connected to: ${tV1.connectedTo}`);
-
+sampTv.connectedTo = 'rca';
