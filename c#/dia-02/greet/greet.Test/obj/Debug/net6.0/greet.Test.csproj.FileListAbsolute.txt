@@ -1,0 +1,5 @@
+/home/guilherme/repositorios/trybe-exercicios/c#/dia-02/greet/greet.Test/obj/Debug/net6.0/greet.Test.csproj.AssemblyReference.cache
+/home/guilherme/repositorios/trybe-exercicios/c#/dia-02/greet/greet.Test/obj/Debug/net6.0/greet.Test.GeneratedMSBuildEditorConfig.editorconfig
+/home/guilherme/repositorios/trybe-exercicios/c#/dia-02/greet/greet.Test/obj/Debug/net6.0/greet.Test.AssemblyInfoInputs.cache
+/home/guilherme/repositorios/trybe-exercicios/c#/dia-02/greet/greet.Test/obj/Debug/net6.0/greet.Test.AssemblyInfo.cs
+/home/guilherme/repositorios/trybe-exercicios/c#/dia-02/greet/greet.Test/obj/Debug/net6.0/greet.Test.csproj.CoreCompileInputs.cache
