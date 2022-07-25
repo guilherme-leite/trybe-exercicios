@@ -38,6 +38,7 @@ class Student {
         this._worksGrades = value;
     }
     sumGrades() {
+        console.log(this.examsGrades, this._examsGrades);
         return [...this.examsGrades, ...this.worksGrades].reduce((acc, curr) => curr += acc);
     }
     sumAverage() {

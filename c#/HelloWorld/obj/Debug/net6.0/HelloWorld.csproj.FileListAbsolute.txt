@@ -1,0 +1,15 @@
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/bin/Debug/net6.0/HelloWorld
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.deps.json
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.runtimeconfig.json
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.dll
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.pdb
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.csproj.AssemblyReference.cache
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.AssemblyInfoInputs.cache
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.AssemblyInfo.cs
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.csproj.CoreCompileInputs.cache
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.dll
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/refint/HelloWorld.dll
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.pdb
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.genruntimeconfig.cache
+/home/guilherme/repositorios/trybe-exercicios/c#/HelloWorld/obj/Debug/net6.0/ref/HelloWorld.dll
