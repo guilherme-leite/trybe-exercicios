@@ -11,7 +11,7 @@ def rectangle(base, height):
 def circle(radius):
     return PI * radius ** 2
 
-
-print('Area do quadrado: ', square(10))
-print('Area do retângulo: ', rectangle(10,12))
-print('Area do circulo: ', circle(10))
+if __name__ == '__main__':
+    print('Area do quadrado: ', square(10))
+    print('Area do retângulo: ', rectangle(10,12))
+    print('Area do circulo: ', circle(10))
