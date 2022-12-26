@@ -13,13 +13,15 @@ public class ImcCalculatorManWoman {
 		
 		System.out.println("Qual é o seu genero?");
 		
-		String gender = scan.next();
+		int gender = 0;
+		
+		gender = scan.nextInt();
 		
 		double result = 0;
 		
 		System.out.println(gender);
 		
-		if (gender == "h") {
+		if (gender == 1) {
 			result = (altura * 72.7) - 58;
 		} else {
 			result = (altura * 62.1) - 44.7;
