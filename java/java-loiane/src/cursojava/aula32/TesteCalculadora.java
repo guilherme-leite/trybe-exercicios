@@ -7,7 +7,6 @@ public class TesteCalculadora {
 		MinhaCalculadora calc = new MinhaCalculadora();
 		
 		int[] vetorInteiros = new int[5];
-		vetorInteiros = [1,3,4,5,6];
 		
 		System.out.println(calc.soma(1, 2));
 		System.out.println(calc.soma(0.5, 0.7));
