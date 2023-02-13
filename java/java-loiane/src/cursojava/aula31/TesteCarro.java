@@ -8,7 +8,7 @@ public class TesteCarro {
 		
 		carro.marca = "Fiat";
 		
-		carro.calcularCombustivel(0)
+		carro.calcularCombustivel(0);
 		
 	}
 

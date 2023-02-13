@@ -11,9 +11,5 @@ public class EX19 {
 		
 		int input = scan.nextInt();
 		
-		if (input) {
-			
-		}
-
-		}
+	}
 }
