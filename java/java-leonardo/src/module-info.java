@@ -6,4 +6,5 @@
  *
  */
 module leonardo {
+	requires java.desktop;
 }
